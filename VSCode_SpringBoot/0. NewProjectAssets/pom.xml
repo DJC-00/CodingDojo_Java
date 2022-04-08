@@ -8,10 +8,10 @@
 		<version>2.6.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.springproject.fruitloopproject</groupId>
-	<artifactId>fruitloops</artifactId>
+	<groupId>com.projects.counterproj</groupId>
+	<artifactId>counter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>fruitloops</name>
+	<name>counter</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>8</java.version>
@@ -33,6 +33,8 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+<!--============ Add These Dependencies ============-->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
@@ -41,6 +43,8 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
         </dependency>
+<!--============ Add These Dependencies ============-->
+
 	</dependencies>
 
 	<build>

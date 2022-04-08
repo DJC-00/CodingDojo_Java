@@ -34,7 +34,9 @@
 			<scope>test</scope>
 		</dependency>
 		
-<!--============ Add These Dependencies ============-->
+<!--vvvvvvvvvvvvv Add These Dependencies vvvvvvvvvvvvv-->
+
+<!--============          for JSP       ============-->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
@@ -43,7 +45,25 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
         </dependency>
-<!--============ Add These Dependencies ============-->
+
+<!--============       for bootstrap    ============-->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>webjars-locator-core</artifactId>
+			<version>0.48</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>5.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>3.6.0</version>
+		</dependency>
+
+<!--^^^^^^^^^^^^^ Add These Dependencies ^^^^^^^^^^^^^ -->
 
 	</dependencies>
 

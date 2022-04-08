@@ -12,6 +12,7 @@
     <h1 class="color-primary">Template working!</h1>
     <p>Check Test: <c:out value="${check}"/></p>
     <p>The time is: <%= new Date() %></p>
-    <p class="p-5">Views: <c:out value="${viewCount}"/></p>
+    <p class="p-5";>Views: <c:out value="${viewCount}"/></p>
+    
 </body>
 </head>

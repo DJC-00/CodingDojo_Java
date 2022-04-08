@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Template for JSP</title>
+    <link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>
 </head>
 <body>
     <h1>Template working!</h1>

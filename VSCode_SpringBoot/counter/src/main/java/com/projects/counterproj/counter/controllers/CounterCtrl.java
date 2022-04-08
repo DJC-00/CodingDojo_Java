@@ -10,12 +10,15 @@ public class CounterCtrl {
 
     @RequestMapping("/")
     public String index(Model model, HttpSession session) {
+        
         if (session.getAttribute("viewCount") == null){
             session.setAttribute("viewCount", 0);
+        }else{
+            Integer views = (Integer) session.getAttribute("viewCount");
+            views++;
+            session.setAttribute("viewCount", views);
+            
         }
-        Integer views = (Integer) session.getAttribute("viewCount");
-        views++;
-        session.setAttribute("viewCount", views);
         model.addAttribute("check", "okay");
         return "index.jsp";
     }

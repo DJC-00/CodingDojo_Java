@@ -8,28 +8,15 @@
 		<version>2.6.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.hellohuman</groupId>
-	<artifactId>hellohuman</artifactId>
+	<groupId>com.myproject</groupId>
+	<artifactId>javaservertest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hellohuman</name>
+	<name>javaservertest</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>8</java.version>
 	</properties>
 	<dependencies>
-
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-			<version>10.1.0-M14</version>
-		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -41,10 +28,21 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+
+		<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jstl</artifactId>
 		</dependency>
 	</dependencies>
 

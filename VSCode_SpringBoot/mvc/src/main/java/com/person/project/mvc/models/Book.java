@@ -48,6 +48,10 @@ public class Book {
         this.numberOfPages = pages;
     }
 
+    public String toString() {
+        return ("ID: " + this.id+ "\nTitle: " + this.title + "\r\nDescription: " + this.description + "/nLanguage: " + this.language + "\nPageCount: " + this.numberOfPages);
+    }
+
     public Long getID() {
         return this.id;
     }

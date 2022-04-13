@@ -36,7 +36,7 @@ public class BookController {
         return "bookView.jsp";
     }
 
-    @GetMapping("/book/all")
+    @GetMapping("/books")
     public String AllBooks(Model pagaData) {
         ArrayList<Book> bookArray = (ArrayList<Book>) bookService.allBooks();
         pagaData.addAttribute("allBooks", bookArray);

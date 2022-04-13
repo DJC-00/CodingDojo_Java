@@ -8,21 +8,34 @@
     <link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>
 </head>
 <body>
-    <h1>All Books</h1>
+    <h1 class="px-5">All Books</h1>
     <hr>
-        <div class = "container">
-            <c:forEach items="${allBooks}" var="book">
-                <p class="text-info">-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_</p>
-                <p>Book ID: <c:out value="${book.ID}"/></p>
-                <p>Book Title: <c:out value="${book.title}"/></p>
-                <p>Book Desc: <c:out value="${book.description}"/></p>
-                <p>Book Lang: <c:out value="${book.language}"/></p>
-                <p>Book PageCnt: <c:out value="${book.numberOfPages}"/></p>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Lang</th>
+                    <th scope="col">Pagecount</th>
+                </tr>
+            </thead>
+            <tbody>
                 
-            </c:forEach>
-            <p class="text-info">-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_</p>
-        </div>
+                <c:forEach items="${allBooks}" var="book">
+                <tr>
+                    <th><c:out value="${book.ID}"/></th>
+                    <td><c:out value="${book.title}"/></td>
+                    <td><c:out value="${book.language}"/></td>
+                    <td><c:out value="${book.numberOfPages}"/></td>
+                </tr>
+                </c:forEach>
+                
+            </tbody>
+        </table>
+    </div>
     <hr>
-    <p>The time is: <%= new Date() %></p>
+    <p class="px-5">The time is: <%= new Date() %></p>
+
 </body>
 </head>

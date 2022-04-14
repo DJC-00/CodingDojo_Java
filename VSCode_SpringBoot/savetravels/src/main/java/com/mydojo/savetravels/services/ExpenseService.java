@@ -18,8 +18,8 @@ public class ExpenseService {
     public List<Expense> allExpenses() {
         return expRepo.findAll();
     }
-    public Expense createExpense(Expense b) {
-        return expRepo.save(b);
+    public Expense createExpense(Expense newExpense) {
+        return expRepo.save(newExpense);
     }
     // retrieves a Expense
     public Expense findExpense(Long id) {
@@ -29,5 +29,21 @@ public class ExpenseService {
         } else {
             return null;
         }
+    }
+    public Expense updateExpense(Expense updatedExpense){
+        Expense ExpenseFromDB = findExpense(updatedExpense.getId());
+        if (ExpenseFromDB == null){
+            return null;
+        }
+
+        ExpenseFromDB.setItem(updatedExpense.getItem());
+        ExpenseFromDB.setVendor(updatedExpense.getVendor());
+        ExpenseFromDB.setCost(updatedExpense.getCost());
+        
+        return expRepo.save(ExpenseFromDB);
+    }
+
+    public void deleteExpense(Long id){
+        expRepo.deleteById(id);
     }
 }

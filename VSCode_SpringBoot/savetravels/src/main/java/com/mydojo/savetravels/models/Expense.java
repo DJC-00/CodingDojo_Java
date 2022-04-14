@@ -24,7 +24,7 @@ public class Expense {
     private Long id;
     @NotNull
     @Size(min = 5, max = 200, message="Title must be at least 5 characters.")
-    private String expense;
+    private String item;
     @NotNull
     @Size(min = 1, max = 200, message="Vendor must be at least 1 characters.")
     private String vendor;
@@ -38,8 +38,8 @@ public class Expense {
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
 
-    public Expense(String expense, String vendor, BigDecimal cost) {
-        this.expense = expense;
+    public Expense(String item, String vendor, BigDecimal cost) {
+        this.item = item;
         this.vendor = vendor;
         this.cost = cost;
     }
@@ -55,12 +55,12 @@ public class Expense {
         this.id = id;
     }
 
-    public String getExpense() {
-        return expense;
+    public String getItem() {
+        return item;
     }
 
-    public void setExpense(String expense) {
-        this.expense = expense;
+    public void setItem(String item) {
+        this.item = item;
     }
 
     public String getVendor() {

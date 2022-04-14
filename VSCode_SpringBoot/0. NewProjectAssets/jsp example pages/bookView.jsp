@@ -19,6 +19,20 @@
             <p>Book PageCnt: <c:out value="${bookPageCnt}"/></p>
         </div>
         <hr>
+        <div class = "container">
+            <c:forEach items="${allBooks}" var="book">
+               <p><c:out value="${book.toString()}" /></p>
+               <br> 
+            </c:forEach>
+            <p>test</p>
+            <c:forEach items="${allBooks}" var="book">
+                    <p>Book ID: <c:out value="${book.ID}"/></p>
+                    <p>Book Title: <c:out value="${book.title}"/></p>
+                    <p>Book Desc: <c:out value="${book.description}"/></p>
+                    <p>Book Lang: <c:out value="${book.language}"/></p>
+                    <p>Book PageCnt: <c:out value="${book.numberOfPages}"/></p>
+                    <br>
+            </c:forEach>
 
             <%-- <c:forEach items="${allBooks}" var="book">
                 <c:forEach items="${book.keySet()}" var="key">
@@ -26,6 +40,8 @@
                 </c:forEach>
             </c:forEach> --%>
             
+        </div>
+    <hr>
     <p>The time is: <%= new Date() %></p>
 </body>
 </head>

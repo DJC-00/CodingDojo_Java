@@ -33,8 +33,7 @@
         <a class="btn btn-primary" href="/newDojo">Make a Dojo</a>
     </div>
     <hr>
-    
-	
+
 	<div class="container border shadow w-50 text-center pt-5 pb-5">
 	<h1 class="text-center pb-3">New Dojo Form</h1>
 		<form:form action="/processDojo" method="post" modelAttribute="dojo">

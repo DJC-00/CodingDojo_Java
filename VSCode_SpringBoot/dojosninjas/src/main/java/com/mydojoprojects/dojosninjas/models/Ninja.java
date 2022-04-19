@@ -21,20 +21,26 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @Table(name="ninjas")
 public class Ninja {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @NotNull
     @NotBlank
     private String firstName;
+
     @NotNull
     @NotBlank
     private String lastName;
+
     @NotNull
     private int age;
+
     @Column(updatable=false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createdAt;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date updatedAt;
 
@@ -113,6 +119,7 @@ public class Ninja {
     protected void onCreate(){
         this.createdAt = new Date();
     }
+
     @PreUpdate
     protected void onUpdate(){
         this.updatedAt = new Date();

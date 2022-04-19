@@ -1,11 +1,15 @@
 package com.mydojoprojects.dojosninjas.controllers;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import com.mydojoprojects.dojosninjas.models.Dojo;
+import com.mydojoprojects.dojosninjas.models.LoginUser;
 import com.mydojoprojects.dojosninjas.models.Ninja;
+import com.mydojoprojects.dojosninjas.models.User;
 import com.mydojoprojects.dojosninjas.services.DojoService;
 import com.mydojoprojects.dojosninjas.services.NinjaService;
+import com.mydojoprojects.dojosninjas.services.UserService;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,73 +29,73 @@ public class HomeCtrl {
 	// Injecting out NinjaService
 	private final NinjaService ninjaServ;
 	private final DojoService dojoServ;
-	// private final UserService userServ;
+	private final UserService userServ;
 	
     // public HomeCtrl(NinjaService ninjaServ, DojoService dojoServ, UserService userServ) {
-	public HomeCtrl(NinjaService ninjaServ, DojoService dojoServ) {
+	public HomeCtrl(NinjaService ninjaServ, DojoService dojoServ, UserService userServ) {
 		super();
 		this.ninjaServ = ninjaServ;
 		this.dojoServ = dojoServ;
-		// this.userServ = userServ;
+		this.userServ = userServ;
 	}
 	
-	//  @GetMapping("/")
-	//     public String index(Model model) {
+	 @GetMapping("/")
+	    public String index(Model model) {
 	    
-	//         // Bind empty User and LoginUser objects to the JSP
-	//         // to capture the form input
-	//         model.addAttribute("newUser", new User());
-	//         model.addAttribute("newLogin", new LoginUser());
-	//         return "index.jsp";
-	//     }
+	        // Bind empty User and LoginUser objects to the JSP
+	        // to capture the form input
+	        model.addAttribute("newUser", new User());
+	        model.addAttribute("newLogin", new LoginUser());
+	        return "index.jsp";
+	    }
 	 
-	//  @PostMapping("/register")
-	//     public String register(@Valid @ModelAttribute("newUser") User newUser, 
-	//             BindingResult result, Model model, HttpSession session) {
+	 @PostMapping("/register")
+	    public String register(@Valid @ModelAttribute("newUser") User newUser, 
+	            BindingResult result, Model model, HttpSession session) {
 	        
-	//         // TO-DO Later -- call a register method in the service 
-	//         // to do some extra validations and create a new user!
+	        // TO-DO Later -- call a register method in the service 
+	        // to do some extra validations and create a new user!
 	        
-	// 	 	userServ.register(newUser, result);
+		 	userServ.register(newUser, result);
 		 	
-	//         if(result.hasErrors()) {
-	//             // Be sure to send in the empty LoginUser before 
-	//             // re-rendering the page.
-	//             model.addAttribute("newLogin", new LoginUser());
-	//             return "index.jsp";
-	//         }
+	        if(result.hasErrors()) {
+	            // Be sure to send in the empty LoginUser before 
+	            // re-rendering the page.
+	            model.addAttribute("newLogin", new LoginUser());
+	            return "index.jsp";
+	        }
 	        
-	//         // No errors! 
-	//         // TO-DO Later: Store their ID from the DB in session, 
-	//         // in other words, log them in.
-	//         session.setAttribute("user_id", newUser.getId());
-	//         return "redirect:/dashboard";
-	//     }
+	        // No errors! 
+	        // TO-DO Later: Store their ID from the DB in session, 
+	        // in other words, log them in.
+	        session.setAttribute("user_id", newUser.getId());
+	        return "redirect:/dashboard";
+	    }
 	    
-	//     @PostMapping("/login")
-	//     public String login(@Valid @ModelAttribute("newLogin") LoginUser newLogin, 
-	//             BindingResult result, Model model, HttpSession session) {
+	    @PostMapping("/login")
+	    public String login(@Valid @ModelAttribute("newLogin") LoginUser newLogin, 
+	            BindingResult result, Model model, HttpSession session) {
 	        
-	//         // Add once service is implemented:
-	//         // User user = userServ.login(newLogin, result);
-	//     	User user = userServ.login(newLogin, result);
-	//         if(result.hasErrors()) {
-	//             model.addAttribute("newUser", new User());
-	//             return "index.jsp";
-	//         }
+	        // Add once service is implemented:
+	        // User user = userServ.login(newLogin, result);
+	    	User user = userServ.login(newLogin, result);
+	        if(result.hasErrors()) {
+	            model.addAttribute("newUser", new User());
+	            return "index.jsp";
+	        }
 	    
-	//         // No errors! 
-	//         // TO-DO Later: Store their ID from the DB in session, 
-	//         // in other words, log them in.
-	//         session.setAttribute("user_id", user.getId());
-	//         return "redirect:/dashboard";
-	//     }
+	        // No errors! 
+	        // TO-DO Later: Store their ID from the DB in session, 
+	        // in other words, log them in.
+	        session.setAttribute("user_id", user.getId());
+	        return "redirect:/dashboard";
+	    }
 	    
-	//     @GetMapping("/logout")
-	//     public String logout(HttpSession session) {
-	//     	session.invalidate();
-	//     	return "redirect:/";
-	//     }
+	    @GetMapping("/logout")
+	    public String logout(HttpSession session) {
+	    	session.invalidate();
+	    	return "redirect:/";
+	    }
 	
 	
 	// Route to show all candies
@@ -181,7 +185,7 @@ public class HomeCtrl {
 	// Routes to Update a Ninja
 	
 	// Render the update Ninja Form
-	// DONT FORGET TO  ADD ID
+	// DONT FORGET TO ADD ID
 	
 	@GetMapping("/oneNinja/{id}/edit")
 	public String updateNinjaForm(@PathVariable("id") Long id, @ModelAttribute("ninja") Ninja ninja, Model model) {

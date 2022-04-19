@@ -17,19 +17,16 @@ public class DojoService {
 		this.dojoRepo = dojoRepo;
 	}
 	
-	
 	// Find all the Dojos
 	public List<Dojo> allDojos() {
 		return dojoRepo.findAll();
 	}
-	
 	
 	// Create a Dojo
 	public Dojo createDojo(Dojo dojo) {
         System.out.println("Createing Dojo");
 		return dojoRepo.save(dojo);
 	}
-	
 	
 	// Find One Dojo From Repo
 	public Dojo findDojo(Long id) {
@@ -43,7 +40,5 @@ public class DojoService {
 			
 			return null;
 		}
-		
 	}
-	
 }

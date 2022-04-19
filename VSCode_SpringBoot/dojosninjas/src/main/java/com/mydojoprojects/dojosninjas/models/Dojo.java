@@ -24,13 +24,17 @@ public class Dojo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @NotNull
     private String name;
+
     @Column(updatable=false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createdAt;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date updatedAt;
+    
     @OneToMany(mappedBy="dojo", fetch = FetchType.LAZY)
     private List<Ninja> ninjas;
     
@@ -38,9 +42,7 @@ public class Dojo {
         this.name = name;
     }
 
-    public Dojo() {
-        
-    }
+    public Dojo() {}
 
     public Long getId() {
         return id;

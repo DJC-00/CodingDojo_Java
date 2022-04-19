@@ -13,8 +13,6 @@ public class NinjaService {
 	// Injecting the repository
 	private final NinjaRepository ninjaRepo;
 
-	
-	
 	public NinjaService(NinjaRepository ninjaRepo) {
 		this.ninjaRepo = ninjaRepo;
 	}
@@ -41,7 +39,6 @@ public class NinjaService {
 			
 			return null;
 		}
-		
 	}
 	
 	// Update a Ninja From Repo
@@ -61,7 +58,7 @@ public class NinjaService {
         
 		return ninjaRepo.save(ninjaFromDB);
 	}
-
+	
 	// Delete A Ninja From Repo 
 	public void deleteNinja(Long id) {
 		ninjaRepo.deleteById(id);

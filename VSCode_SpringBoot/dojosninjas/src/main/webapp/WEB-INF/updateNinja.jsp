@@ -19,7 +19,6 @@
       rel="stylesheet" 
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
       crossorigin="anonymous">
-
 </head>
 <body>
     <div class="container"> <!-- Beginning of Container -->
@@ -27,14 +26,15 @@
         <h1>What Changes Would You Like to Make to This ninja?</h1>
         
         <br>
+
         <div class="container d-flex gap-3 pb-3">
             <a class="btn btn-primary" href="/dashboard">Dashboard</a>
             <a class="btn btn-primary" href="/newNinja">Make a Ninja</a>
             <a class="btn btn-primary" href="/newDojo">Make a Dojo</a>
         </div>
+
         <hr>
 
-        
         <div class="container border shadow w-50 pt-5 pb-5 col">
         <h4 class="text-center">Make Changes to ${ninja.firstName}  ${ninja.lastName}</h4>
             <form:form class="p-5" action="/oneNinja/${ninja.id}" method="post" modelAttribute="ninja">
@@ -74,4 +74,4 @@
         </div>
     </div> <!-- End of Container -->
 </body>
-</html>
+</ht

@@ -33,7 +33,7 @@ pageEncoding="UTF-8"%>
         <a class="btn btn-primary" href="/dashboard">Dashboard</a>
         <a class="btn btn-primary" href="/newNinja">Make a Ninja</a>
         <a class="btn btn-primary" href="/newDojo">Make a Dojo</a>
-        <a class="btn btn-danger" href="/logout">Make a Dojo</a>
+        <a class="btn btn-danger" href="/logout">Logout</a>
       </div>
 
 

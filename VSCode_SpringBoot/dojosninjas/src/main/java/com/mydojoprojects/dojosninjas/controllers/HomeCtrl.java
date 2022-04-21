@@ -192,8 +192,6 @@ public class HomeCtrl {
 		
 		model.addAttribute("ninja", ninjaServ.findNinja(id));
         model.addAttribute("allDojos", dojoServ.allDojos());
-        System.out.println("Edit");
-		System.out.println(ninja);
 		return "updateNinja.jsp";
 	}
 	
